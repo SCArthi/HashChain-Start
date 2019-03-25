@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2019 at 06:01 AM
+-- Generation Time: Mar 25, 2019 at 06:33 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -60,6 +60,141 @@ CREATE TABLE `creatematerial` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dailycostreport`
+--
+
+CREATE TABLE `dailycostreport` (
+  `Barcode` varchar(255) NOT NULL,
+  `Material` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Cost` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dailytransferreport`
+--
+
+CREATE TABLE `dailytransferreport` (
+  `Date` date NOT NULL,
+  `Section` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Cost` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `monthlycostreport`
+--
+
+CREATE TABLE `monthlycostreport` (
+  `Date` date NOT NULL,
+  `Barcode` varchar(255) NOT NULL,
+  `Material` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Cost` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Unit Price` int(11) NOT NULL,
+  `Initial Quantity` int(11) NOT NULL,
+  `Available Quantity` int(11) NOT NULL,
+  `Unit` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registersalary`
+--
+
+CREATE TABLE `registersalary` (
+  `Name` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Section` varchar(255) NOT NULL,
+  `Basic Salary` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewattendance`
+--
+
+CREATE TABLE `viewattendance` (
+  `Name` varchar(255) NOT NULL,
+  `Start Time` time NOT NULL,
+  `End Time` time NOT NULL,
+  `Net Hours` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewcashstock`
+--
+
+CREATE TABLE `viewcashstock` (
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Unit` int(11) NOT NULL,
+  `Unit Price` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewcompanystock`
+--
+
+CREATE TABLE `viewcompanystock` (
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Unit` int(11) NOT NULL,
+  `Unit Price` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewdetailedmaterials`
+--
+
+CREATE TABLE `viewdetailedmaterials` (
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Category` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Unit` int(11) NOT NULL,
+  `Unit Price` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `viewfinalgood`
 --
 
@@ -69,6 +204,22 @@ CREATE TABLE `viewfinalgood` (
   `Item` int(11) NOT NULL,
   `Section` varchar(255) NOT NULL,
   `Quantity` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewmainstock`
+--
+
+CREATE TABLE `viewmainstock` (
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Unit` int(11) NOT NULL,
+  `Unit Price` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -101,6 +252,19 @@ CREATE TABLE `viewpurchasedmaterial` (
   `Unit` int(11) NOT NULL,
   `Unit Price` int(11) NOT NULL,
   `Total` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewstock`
+--
+
+CREATE TABLE `viewstock` (
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Available Quantity` int(11) NOT NULL,
+  `Unit` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
