@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2019 at 06:33 AM
+-- Generation Time: Mar 25, 2019 at 07:08 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -42,6 +42,19 @@ CREATE TABLE `barcodeprint` (
   `Barcode` varchar(255) NOT NULL,
   `Price` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checkdailywage`
+--
+
+CREATE TABLE `checkdailywage` (
+  `Name` varchar(255) NOT NULL,
+  `Wage` int(11) NOT NULL,
+  `O/T` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -90,6 +103,21 @@ CREATE TABLE `dailytransferreport` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dailywagerecord`
+--
+
+CREATE TABLE `dailywagerecord` (
+  `Name` varchar(255) NOT NULL,
+  `Basic Salary` int(11) NOT NULL,
+  `Attendance Allowance` int(11) NOT NULL,
+  `O/T` int(11) NOT NULL,
+  `Total` int(11) NOT NULL,
+  `Status` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `monthlycostreport`
 --
 
@@ -100,6 +128,21 @@ CREATE TABLE `monthlycostreport` (
   `Type` varchar(255) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `Cost` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `monthlysalarycontrol`
+--
+
+CREATE TABLE `monthlysalarycontrol` (
+  `Name` varchar(255) NOT NULL,
+  `Basic Salary` int(11) NOT NULL,
+  `Attendance Allowance` int(11) NOT NULL,
+  `O/T` int(11) NOT NULL,
+  `Total` int(11) NOT NULL,
+  `Status` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -128,6 +171,20 @@ CREATE TABLE `registersalary` (
   `Type` varchar(255) NOT NULL,
   `Section` varchar(255) NOT NULL,
   `Basic Salary` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salaryreport`
+--
+
+CREATE TABLE `salaryreport` (
+  `Name` varchar(255) NOT NULL,
+  `Basic` int(11) NOT NULL,
+  `Attendance Allowance` int(11) NOT NULL,
+  `O/T` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -257,6 +314,19 @@ CREATE TABLE `viewpurchasedmaterial` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `viewstaff`
+--
+
+CREATE TABLE `viewstaff` (
+  `Name` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Section` varchar(255) NOT NULL,
+  `Basic Salary` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `viewstock`
 --
 
@@ -265,6 +335,22 @@ CREATE TABLE `viewstock` (
   `Name` varchar(255) NOT NULL,
   `Available Quantity` int(11) NOT NULL,
   `Unit` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `viewtransferedmaterials`
+--
+
+CREATE TABLE `viewtransferedmaterials` (
+  `Date` date NOT NULL,
+  `Section` varchar(255) NOT NULL,
+  `Type` varchar(255) NOT NULL,
+  `Barcode` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Cost` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
