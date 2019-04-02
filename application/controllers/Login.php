@@ -19,7 +19,7 @@ class Login extends Admin_Controller
 	{
 		$this->load->view('templates/header');
 		$this->load->view('sections/user/login/login');
-		$this->load->view('templates/footer');
+		$this->load->view('sections/user/footer');
 	}
 
     public function adminlogin()

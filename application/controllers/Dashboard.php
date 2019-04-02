@@ -34,8 +34,9 @@ class Dashboard extends Admin_Controller
     public function userdashboard()
 	{
 		$this->load->view('templates/header');
+		$this->load->view('sections/user/header');
         $this->load->view('sections/user/dashboard/user_dashboard');
-		$this->load->view('templates/footer');
+		$this->load->view('sections/user/footer');
 	}
     
 }
