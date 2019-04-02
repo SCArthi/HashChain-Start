@@ -48,7 +48,7 @@
                     showMethod: 'slideDown',
                     timeOut: 4000
                 };
-                toastr.success('Responsive Admin Theme', 'Welcome to INSPINIA');
+                toastr.success('User Login Success', 'Welcome to User Panel');
 
             }, 1300);
 
